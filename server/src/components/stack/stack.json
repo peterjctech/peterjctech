@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_stack_stacks",
+  "info": {
+    "displayName": "stack",
+    "icon": "chalkboard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

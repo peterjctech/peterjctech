@@ -18,3 +18,18 @@
     z-index: 98;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+.container {
+    border: solid $c-secondary 5px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 40px rgba($c-secondary, 0.5);
+    background: linear-gradient(135deg, $c-neutral 0%, rgba($c-neutral, 0) 100%);
+}
+
+.light {
+    color: $c-neutral-light;
+}
+
+.code {
+    font-family: $ff-code;
+}

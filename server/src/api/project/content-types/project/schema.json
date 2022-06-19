@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "project"
+    "displayName": "project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,24 +13,26 @@
   "pluginOptions": {},
   "attributes": {
     "demo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
-    "screenshot": {
+    "screenshots": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "title": {
       "type": "string"
@@ -46,11 +49,11 @@
     "applicationLink": {
       "type": "string"
     },
-    "technology": {
-      "displayName": "technology",
+    "stack": {
+      "displayName": "stack",
       "type": "component",
       "repeatable": true,
-      "component": "technology.technology"
+      "component": "stack.stack"
     }
   }
 }

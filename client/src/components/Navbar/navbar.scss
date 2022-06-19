@@ -27,6 +27,7 @@
         letter-spacing: 2px;
         color: $c-neutral-light;
         margin: auto 2rem;
+        cursor: pointer;
 
         &.active {
             color: $c-primary;

@@ -1,0 +1,12 @@
+.home-page {
+    &__about {
+        padding: 2rem;
+        width: 80%;
+        margin: 4rem auto;
+
+        h1 {
+            color: white;
+            font-family: $ff-code;
+        }
+    }
+}

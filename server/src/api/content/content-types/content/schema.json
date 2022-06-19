@@ -19,6 +19,9 @@
       "type": "component",
       "repeatable": true,
       "component": "technology.technology"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }
