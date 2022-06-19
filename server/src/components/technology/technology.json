@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_technology_technologies",
+  "info": {
+    "displayName": "technology",
+    "icon": "desktop",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

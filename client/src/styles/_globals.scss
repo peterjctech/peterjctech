@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $ff-default;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    background-color: $c-neutral-dark;
+    min-height: calc(100vh - 8rem);
+    padding: 1rem;
+}

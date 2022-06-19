@@ -1,0 +1,48 @@
+.navbar-toggler {
+    $self: &;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8rem;
+
+    @include breakpoint(601px) {
+        display: none;
+    }
+
+    rect {
+        fill: $c-neutral-light;
+        width: 60%;
+        height: 8%;
+        x: 20;
+        rx: 5;
+        ry: 5;
+        transition: 300ms ease-out;
+    }
+
+    &__top {
+        y: 20;
+        transform-origin: 25% 25%;
+    }
+
+    &__middle {
+        y: 46;
+        transform-origin: 50% 50%;
+    }
+
+    &__bottom {
+        y: 72;
+        transform-origin: 25% 75%;
+    }
+
+    &.toggled {
+        #{$self}__top {
+            transform: rotateZ(45deg) scaleX(1.41421356237);
+        }
+        #{$self}__middle {
+            transform: scaleX(0);
+        }
+        #{$self}__bottom {
+            transform: rotateZ(-45deg) scaleX(1.41421356237);
+        }
+    }
+}
