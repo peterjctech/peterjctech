@@ -1,9 +1,5 @@
-import Navbar from "./Navbar/Navbar";
-import NavbarToggler from "./NavbarToggler/NavbarToggler";
-import Logo from "./Logo/Logo";
-import About from "./About/About";
-import Technologies from "./Technologies/Technologies";
-import ProjectCard from "./ProjectCard/ProjectCard";
-import Button from "./Button/Button";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import Logo from "./Logo";
 
-export { Navbar, NavbarToggler, Logo, About, Technologies, ProjectCard, Button };
+export { Footer, Navbar, Logo };

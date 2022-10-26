@@ -1,0 +1,67 @@
+.logo {
+    width: 5rem;
+    height: 5rem;
+    filter: drop-shadow(3px 3px 2px $c-secondary);
+    box-shadow: 0px 0px 2px 2px $c-primary;
+    border-radius: 0.5rem;
+
+    &__p {
+        fill: white;
+        animation: logoP 7s infinite;
+    }
+    &__j {
+        fill: white;
+        animation: logoJ 7s infinite;
+    }
+    &__c {
+        fill: white;
+        animation: logoC 7s infinite;
+    }
+
+    &.prototype {
+        width: 10rem;
+        height: 10rem;
+        position: fixed;
+        bottom: 50%;
+        right: 50%;
+        transform: translate(50%, 50%);
+
+        .logo__p2 {
+            fill: $c-main;
+        }
+    }
+}
+
+@keyframes logoP {
+    0%,
+    90%,
+    100% {
+        opacity: 1;
+    }
+    5%,
+    85% {
+        opacity: 0.9;
+    }
+}
+@keyframes logoJ {
+    0%,
+    90%,
+    100% {
+        opacity: 1;
+    }
+    10%,
+    85% {
+        opacity: 0.8;
+    }
+}
+@keyframes logoC {
+    0%,
+    90%,
+    100% {
+        opacity: 1;
+    }
+    20%,
+    85% {
+        opacity: 0.6;
+    }
+}

@@ -1,0 +1,16 @@
+$ff-default: "Ubuntu";
+$ff-heading: "NunitoSans";
+$ff-code: "JetBrainsMono";
+
+@font-face {
+    font-family: $ff-default;
+    src: url("static/Ubuntu.ttf");
+}
+@font-face {
+    font-family: $ff-heading;
+    src: url("static/NunitoSans.ttf");
+}
+@font-face {
+    font-family: $ff-code;
+    src: url("static/JetBrainsMono.ttf");
+}
