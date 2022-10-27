@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * social service.
+ * social service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;

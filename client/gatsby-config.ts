@@ -1,4 +1,14 @@
 import type { GatsbyConfig } from "gatsby";
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
+const strapiConfig = {
+    apiURL: process.env.STRAPI_API_URL,
+    queryLimit: 1000,
+    collectionTypes: ["project", "social"],
+    singleTypes: ["content"],
+};
 
 const config: GatsbyConfig = {
     siteMetadata: {
@@ -17,10 +27,14 @@ const config: GatsbyConfig = {
             },
         },
         {
-            resolve: "gatsby-plugin-manifest",
+            resolve: `gatsby-plugin-manifest`,
             options: {
                 icon: "./static/icon.png",
             },
+        },
+        {
+            resolve: `gatsby-source-strapi`,
+            options: strapiConfig,
         },
     ],
 };

@@ -11,13 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
-    "icon": {
-      "type": "string"
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     },
     "link": {
+      "type": "string"
+    },
+    "name": {
       "type": "string"
     }
   }

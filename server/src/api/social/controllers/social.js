@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- *  social controller
+ * social controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;

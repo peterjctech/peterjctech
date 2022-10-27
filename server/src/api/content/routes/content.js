@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * content router.
+ * content router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;

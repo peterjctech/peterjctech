@@ -1,10 +1,23 @@
-import * as React from "react";
+import React from "react";
+import { graphql } from "gatsby";
 import type { HeadFC } from "gatsby";
+import { Typing } from "components";
 
-const IndexPage = () => {
+interface HomePageProps {
+    data: {
+        allStrapiContent: {
+            nodes: {
+                about: string;
+            }[];
+        };
+    };
+}
+
+const IndexPage = ({ data }: HomePageProps) => {
+    console.log(data);
     return (
         <main>
-            <h1 className="hello">Hello World</h1>
+            <Typing string={data.allStrapiContent.nodes[0].about} />
         </main>
     );
 };
@@ -12,3 +25,13 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>PJCTech | Home</title>;
+
+export const data = graphql`
+    query {
+        allStrapiContent {
+            nodes {
+                about
+            }
+        }
+    }
+`;

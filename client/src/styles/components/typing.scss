@@ -1,0 +1,41 @@
+.typing {
+    display: inline-block;
+
+    &__text {
+        color: white;
+        font-family: $ff-code;
+        display: inline-block;
+    }
+
+    &__block {
+        position: relative;
+        top: 2px;
+        background-color: $c-light;
+        width: 0.5rem;
+        height: 1rem;
+        margin-left: 0.1rem;
+        display: inline-block;
+
+        &.flashing {
+            animation: flashing 800ms linear infinite;
+        }
+    }
+}
+
+@keyframes flashing {
+    0% {
+        opacity: 1;
+    }
+    69% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -4,56 +4,47 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "project",
-    "description": ""
+    "displayName": "project"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "demo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "name": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
     },
     "screenshots": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
-    "title": {
+    "demo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "github": {
       "type": "string"
     },
-    "shortDescription": {
-      "type": "text"
-    },
-    "longDescription": {
-      "type": "text"
-    },
-    "repositoryLink": {
+    "link": {
       "type": "string"
-    },
-    "applicationLink": {
-      "type": "string"
-    },
-    "stack": {
-      "displayName": "stack",
-      "type": "component",
-      "repeatable": true,
-      "component": "stack.stack"
     }
   }
 }
