@@ -44,7 +44,12 @@ export const sendEmail = async (props: FormData) => {
         message,
     };
     try {
-        await emailjs.send(process.env.SERVICE_ID!, process.env.TEMPLATE_ID!, params, process.env.PUBLIC_KEY!);
+        await emailjs.send(
+            process.env.GATSBY_SERVICE_ID!,
+            process.env.GATSBY_TEMPLATE_ID!,
+            params,
+            process.env.GATSBY_PUBLIC_KEY!
+        );
         return true;
     } catch (error) {
         console.log("error => ", error);

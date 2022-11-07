@@ -6,5 +6,6 @@ import Typing from "./Typing";
 import Button from "./Button";
 import Menu from "./Menu";
 import Input from "./Input";
+import Toast from "./Toast";
 
-export { Footer, Navbar, Logo, Project, Typing, Button, Menu, Input };
+export { Footer, Navbar, Logo, Project, Typing, Button, Menu, Input, Toast };

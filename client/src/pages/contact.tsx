@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Input, Button } from "components";
+import { Input, Button, Toast } from "components";
 import { AiOutlineMail, AiOutlinePhone, AiOutlineUser, AiOutlineEdit } from "react-icons/ai";
 import { validateContactForm, sendEmail } from "../helpers/contactHelpers";
 import ReCAPTCHA from "react-google-recaptcha";
-import Toast from "../components/Toast";
+import { HeadFC } from "gatsby";
 
 const defaultState = {
     nameOrCompany: "",
@@ -94,7 +94,11 @@ const ContactPage = () => {
                         />
                     </div>
                     <div className="recaptcha">
-                        <ReCAPTCHA sitekey={process.env.RECAPTCHA_SITE_KEY!} onChange={handleValidate} theme="dark" />
+                        <ReCAPTCHA
+                            sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY!}
+                            onChange={handleValidate}
+                            theme="dark"
+                        />
                     </div>
                     <Button click={submitForm} variant="success">
                         Submit
@@ -106,3 +110,5 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+export const Head: HeadFC = () => <title>PJCTech | Contact</title>;
