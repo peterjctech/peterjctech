@@ -38,12 +38,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 1rem;
 
     .container {
         border: solid white 1px;
         width: min(95vw, 40rem);
         padding: 1.2rem;
-        background-color: cyan;
+        background-color: #1773ea;
         border-radius: 10px;
     }
 
@@ -52,12 +53,18 @@
         text-align: center;
         font-family: $ff-heading;
         letter-spacing: 1px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         font-size: 2.4rem;
     }
 
-    .form__content > p {
+    .form__content {
+        position: relative;
+
         p {
+            position: absolute;
+            top: 0rem;
+            left: 50%;
+            transform: translateX(-50%);
             color: crimson;
             font-weight: bold;
             font-size: 1.5rem;

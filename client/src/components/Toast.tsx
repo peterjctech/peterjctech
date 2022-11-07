@@ -3,11 +3,12 @@ import { AiFillCheckCircle } from "react-icons/ai";
 
 interface ToastProps {
     message: string;
+    variant: "error" | "success";
 }
 
-const Toast = ({ message }: ToastProps) => {
+const Toast = ({ message, variant }: ToastProps) => {
     return (
-        <div className="toast">
+        <div className={`toast ${variant}`}>
             <AiFillCheckCircle />
             <p>{message}</p>
         </div>

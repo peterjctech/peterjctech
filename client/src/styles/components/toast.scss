@@ -2,15 +2,23 @@
     position: fixed;
     bottom: 2rem;
     left: 2rem;
-    background-color: green;
     z-index: 99;
     border-radius: 10px;
     padding: 1rem;
     display: flex;
     align-items: center;
-    width: 20rem;
+    width: 24rem;
     height: 5rem;
     color: white;
+    overflow: hidden;
+    text-align: center;
+
+    &.success {
+        background-color: green;
+    }
+    &.error {
+        background-color: crimson;
+    }
 
     svg {
         width: 3rem;

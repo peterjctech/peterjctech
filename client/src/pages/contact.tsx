@@ -17,6 +17,10 @@ const defaultState = {
 const ContactPage = () => {
     const [formData, setFormData] = useState(defaultState);
     const [showToast, setShowToast] = useState("");
+    const [toast, setToast] = useState<{ variant: "success" | "error"; message: string }>({
+        variant: "success",
+        message: "",
+    });
     const [errorMessage, setErrorMessage] = useState("");
 
     const handleChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
@@ -29,22 +33,31 @@ const ContactPage = () => {
     const submitForm = async () => {
         const error = validateContactForm(formData);
         if (error) {
-            setErrorMessage("*" + error + "*");
+            setToast({
+                variant: "error",
+                message: error,
+            });
+            setTimeout(() => {
+                setToast({ ...toast, message: "" });
+            }, 3000);
         } else {
             setErrorMessage("");
             const response = await sendEmail(formData);
             if (response) {
-                setShowToast("E-Mail has been sent successfully");
                 setFormData(defaultState);
+                setToast({
+                    variant: "error",
+                    message: "E-mail has been sent successfully",
+                });
                 setTimeout(() => {
-                    setShowToast("");
+                    setToast({ ...toast, message: "" });
                 }, 3000);
             }
         }
     };
     return (
         <main className="contact-page">
-            {showToast && <Toast message={showToast} />}
+            {toast.message && <Toast message={toast.message} variant={toast.variant} />}
             <h1>Contact</h1>
             <div className="container">
                 <div className="form">
