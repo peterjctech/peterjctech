@@ -6,15 +6,17 @@
         font-family: $ff-code;
         display: inline-block;
         font-size: 1.4rem;
+        line-height: 2rem;
+        position: relative;
     }
 
     &__block {
         position: relative;
+        top: 3px;
         background-color: $c-light;
         width: 0.5rem;
         height: 1.4rem;
-        bottom: 5px;
-        margin-left: 0.3rem;
+        margin-left: 0.1rem;
         display: inline-block;
 
         &.flashing {
