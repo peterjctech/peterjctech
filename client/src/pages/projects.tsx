@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, HeadFC } from "gatsby";
+import { graphql, HeadFC, Link } from "gatsby";
 import { Project } from "components";
 
 interface ProjectsPageProps {
@@ -27,9 +27,15 @@ interface ProjectsPageProps {
 }
 
 const ProjectsPage = ({ data }: ProjectsPageProps) => {
-    console.log(data.allStrapiProject.nodes);
     return (
-        <main>
+        <main className="projects-page">
+            <h1>
+                Projects page coming soon. In the meantime, please visit my{" "}
+                <a href="https://www.github.com/peterjctech" target="__blank">
+                    Github
+                </a>{" "}
+                to view my work or <Link to="/contact">Contact</Link> me
+            </h1>
             {data.allStrapiProject.nodes.map((node) => {
                 return (
                     <Project

@@ -14,6 +14,7 @@
         "typecheck": "tsc --noEmit"
     },
     "dependencies": {
+        "@emailjs/browser": "^3.9.1",
         "dotenv": "^16.0.3",
         "gatsby": "^4.24.4",
         "gatsby-plugin-alias-imports": "^1.0.5",
@@ -22,12 +23,15 @@
         "gatsby-source-strapi": "^2.0.0",
         "react": "^18.1.0",
         "react-dom": "^18.1.0",
+        "react-google-recaptcha": "^2.1.0",
+        "react-icons": "^4.6.0",
         "sass": "^1.55.0"
     },
     "devDependencies": {
         "@types/node": "^17.0.45",
         "@types/react": "^18.0.21",
         "@types/react-dom": "^18.0.6",
+        "@types/react-google-recaptcha": "^2.1.5",
         "typescript": "^4.8.3"
     }
 }

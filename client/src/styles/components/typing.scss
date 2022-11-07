@@ -5,15 +5,16 @@
         color: white;
         font-family: $ff-code;
         display: inline-block;
+        font-size: 1.4rem;
     }
 
     &__block {
         position: relative;
-        top: 2px;
         background-color: $c-light;
         width: 0.5rem;
-        height: 1rem;
-        margin-left: 0.1rem;
+        height: 1.4rem;
+        bottom: 5px;
+        margin-left: 0.3rem;
         display: inline-block;
 
         &.flashing {

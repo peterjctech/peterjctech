@@ -1,0 +1,12 @@
+@mixin breakpoint($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin center {
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}

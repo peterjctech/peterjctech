@@ -19,8 +19,8 @@ const Typing = ({ string }: TypingProps) => {
     }, []);
     return (
         <div className="typing">
-            <p className="typing__text">{text}</p>
-            <div className={`typing__block${isFlashing ? " flashing" : ""}`} />
+            <p className="typing__text">Hello World...{text}</p>
+            <div className="typing__block flashing" />
         </div>
     );
 };

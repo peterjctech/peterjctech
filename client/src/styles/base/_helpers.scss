@@ -3,3 +3,79 @@
     color: $c-light;
     font-family: $ff-code;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    h6 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: $ff-code;
+    }
+
+    .input,
+    textarea {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+
+        .input {
+            width: 48%;
+        }
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+
+    .recaptcha {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 98;
+    background-color: rgba($color: black, $alpha: 0.5);
+
+    &.visible {
+        animation: showMask 500ms forwards;
+    }
+    &.hidden {
+        animation: hideMask 500ms forwards;
+    }
+
+    @include breakpoint(600px) {
+        display: none;
+    }
+}
+
+@keyframes showMask {
+    0% {
+        opacity: 0;
+        display: block;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes hideMask {
+    0% {
+        opacity: 1;
+        display: none;
+    }
+    100% {
+        opacity: 0;
+    }
+}

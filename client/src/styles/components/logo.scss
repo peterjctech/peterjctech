@@ -4,6 +4,7 @@
     filter: drop-shadow(3px 3px 2px $c-secondary);
     box-shadow: 0px 0px 2px 2px $c-primary;
     border-radius: 0.5rem;
+    cursor: pointer;
 
     &__p {
         fill: white;

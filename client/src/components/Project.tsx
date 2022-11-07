@@ -13,7 +13,7 @@ interface ProjectProps {
 const Project = (props: ProjectProps) => {
     return (
         <div className="project">
-            <h1>Project</h1>
+            <h1></h1>
         </div>
     );
 };

@@ -1,0 +1,41 @@
+.button {
+    padding: 0.5rem 0.5em;
+    border-radius: 7px;
+    font-family: $ff-code;
+    cursor: pointer;
+    transition-duration: 200ms;
+    font-size: 1.5rem;
+
+    &:hover {
+        font-size: 1.6rem;
+    }
+
+    &.primary {
+        background-color: $c-primary;
+        color: white;
+        &:hover {
+            background-color: darken($c-primary, 10%);
+        }
+    }
+    &.success {
+        background-color: $c-success;
+        &:hover {
+            background-color: darken($c-success, 10%);
+        }
+    }
+
+    &.secondary {
+        background-color: $c-secondary;
+        color: white;
+        &:hover {
+            background-color: darken($c-secondary, 10%);
+        }
+    }
+
+    &.tertiary {
+        background-color: $c-tertiary;
+        &:hover {
+            background-color: darken($c-tertiary, 10%);
+        }
+    }
+}

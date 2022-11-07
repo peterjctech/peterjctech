@@ -1,0 +1,33 @@
+.input {
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+    position: relative;
+    background-color: $c-light;
+
+    &:focus-within {
+        box-shadow: 0px 0px 5px 3px $c-secondary;
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        fill: $c-dark;
+        margin-left: 0.7rem;
+    }
+
+    &__icon {
+        overflow: hidden;
+    }
+
+    input {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        height: 2rem;
+        margin-left: 0.7rem;
+        width: calc(100% - 2rem);
+        font-size: 1.3rem;
+    }
+}
