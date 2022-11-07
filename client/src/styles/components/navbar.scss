@@ -5,6 +5,7 @@
     position: relative;
     display: flex;
     z-index: 99;
+    overflow: visible;
 
     .logo {
         position: absolute;
