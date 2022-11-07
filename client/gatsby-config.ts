@@ -4,7 +4,8 @@ require("dotenv").config({
 });
 
 const strapiConfig = {
-    apiURL: process.env.STRAPI_API_URL,
+    // apiURL: process.env.STRAPI_API_URL,
+    apiURL: "https://6368d734d1d4d5077c05943c--endearing-pegasus-2c1d0b.netlify.app",
     queryLimit: 1000,
     collectionTypes: ["project", "social"],
     singleTypes: ["content"],
