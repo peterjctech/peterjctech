@@ -9,7 +9,7 @@ const ProjectsPage = () => {
                 <a href="https://www.github.com/peterjctech" target="__blank">
                     Github
                 </a>{" "}
-                to view my work or <Link to="/contact">Contact</Link> me
+                to view my work, or <Link to="/contact">Contact</Link> me
             </h1>
         </main>
     );

@@ -4,11 +4,7 @@
     font-family: $ff-code;
     cursor: pointer;
     transition-duration: 200ms;
-    font-size: 1.5rem;
-
-    &:hover {
-        font-size: 1.6rem;
-    }
+    font-size: 1.3rem;
 
     &.primary {
         background-color: $c-primary;

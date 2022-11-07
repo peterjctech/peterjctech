@@ -45,7 +45,7 @@ const ContactPage = () => {
     return (
         <main className="contact-page">
             {showToast && <Toast message={showToast} />}
-            <h1>Contact Me</h1>
+            <h1>Contact</h1>
             <div className="container">
                 <div className="form">
                     <div className="form__content">
