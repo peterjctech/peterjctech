@@ -16,6 +16,7 @@ interface HomePageProps {
 }
 
 const IndexPage = ({ data }: HomePageProps) => {
+    console.log(data.allStrapiContent.nodes[0].about);
     const viewProjects = () => {
         navigate("/projects");
     };
