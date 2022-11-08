@@ -1,19 +1,28 @@
 import React from "react";
-import { navigate } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import type { HeadFC } from "gatsby";
 import { Typing, Button } from "components";
 
-const aboutMe =
-    "Hello world. I am a fullstack developer based in Utah. I enjoy solving difficult problems and learning new things.";
+const aboutMe = "Hello World.";
 
-const IndexPage = () => {
+interface HomePageProps {
+    data: {
+        allStrapiContent: {
+            nodes: {
+                about: string;
+            }[];
+        };
+    };
+}
+
+const IndexPage = ({ data }: HomePageProps) => {
     const viewProjects = () => {
         navigate("/projects");
     };
     return (
         <main className="home-page">
             <div className="container">
-                <Typing string={aboutMe} />
+                <Typing string={data.allStrapiContent.nodes[0].about} />
                 <footer>
                     <Button click={viewProjects} variant="primary">
                         View Projects
@@ -27,3 +36,13 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>PJCTech | Home</title>;
+
+export const data = graphql`
+    {
+        allStrapiContent {
+            nodes {
+                about
+            }
+        }
+    }
+`;

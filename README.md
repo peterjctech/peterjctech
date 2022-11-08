@@ -1,1 +1,1 @@
-### Deployed Application: https://www.peterjctech.com
+### https://www.peterjctech.com
