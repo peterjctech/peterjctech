@@ -16,16 +16,12 @@ interface HomePageProps {
 }
 
 const IndexPage = ({ data }: HomePageProps) => {
-    console.log(data.allStrapiContent.nodes[0].about);
-    const viewProjects = () => {
-        navigate("/projects");
-    };
     return (
         <main className="home-page">
             <div className="container">
                 <Typing string={data.allStrapiContent.nodes[0].about} />
                 <footer>
-                    <Button click={viewProjects} variant="primary">
+                    <Button click={() => navigate("/projects")} variant="primary">
                         View Projects
                     </Button>
                 </footer>

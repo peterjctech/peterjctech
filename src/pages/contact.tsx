@@ -16,7 +16,6 @@ const defaultState = {
 
 const ContactPage = () => {
     const [formData, setFormData] = useState(defaultState);
-    const [showToast, setShowToast] = useState("");
     const [toast, setToast] = useState<{ variant: "success" | "error"; message: string }>({
         variant: "success",
         message: "",
