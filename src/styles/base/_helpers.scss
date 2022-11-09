@@ -1,55 +1,38 @@
+.title {
+    font-family: $ff-cracked;
+    font-size: 3.7rem;
+    text-align: center;
+    letter-spacing: 5px;
+    background: linear-gradient(to bottom right, rgba(white, 1), rgba(white, 0));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    animation: fadeIn 500ms forwards 1.5s;
+    cursor: default;
+    user-select: none;
+    margin-top: 2rem;
+
+    @include breakpoint(1000px) {
+        margin: 0;
+        position: absolute;
+        bottom: 50%;
+        left: 3rem;
+        letter-spacing: 0;
+        transform: translateY(50%);
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+}
+
+.disassemble .title {
+    opacity: 1;
+    animation: fadeOut 500ms forwards 500ms;
+}
+
 .hello {
     text-align: center;
     color: $c-light;
     font-family: $ff-code;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-
-    &__content {
-        padding: 0.3rem;
-    }
-
-    h6 {
-        text-align: center;
-        font-size: 1.2rem;
-        font-family: $ff-code;
-        color: white;
-        text-shadow: #000 3px 3px 3px;
-    }
-
-    .input,
-    textarea {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    section {
-        display: flex;
-        justify-content: space-between;
-        overflow: visible;
-
-        .input {
-            width: 46%;
-            transform: none;
-        }
-    }
-
-    .button {
-        margin: 0 auto;
-    }
-
-    .recaptcha {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1rem;
-
-        > div > div > div {
-            overflow: hidden;
-        }
-    }
 }
 
 .mask {

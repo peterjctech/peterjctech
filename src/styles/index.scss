@@ -1,10 +1,14 @@
 @import "./abstracts/colors";
 @import "./abstracts/typography";
 @import "./abstracts/mixins";
+@import "./abstracts/keyframes";
 
 @import "./base/globals";
 @import "./base/helpers";
-@import "./base/layouts";
+
+@import "./pages/home-page";
+@import "./pages/projects-page";
+@import "./pages/contact-page";
 
 @import "./components/button";
 @import "./components/footer";
@@ -12,5 +16,6 @@
 @import "./components/logo";
 @import "./components/menu";
 @import "./components/navbar";
-@import "./components/typing";
 @import "./components/toast";
+@import "./components/screen";
+@import "./components/project";

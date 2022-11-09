@@ -10,7 +10,8 @@ main {
     background-color: $c-main;
     width: 100vw;
     min-height: calc(100vh - 12rem);
-    padding: 2rem;
+    position: relative;
+    overflow-y: auto;
 }
 
 textarea {

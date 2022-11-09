@@ -57,29 +57,31 @@ const ContactPage = () => {
     return (
         <main className="contact-page">
             {toast.message && <Toast message={toast.message} variant={toast.variant} />}
-            <h1>Contact</h1>
+            <h1 className="title">CONTACT</h1>
             <div className="container">
                 <div className="form">
                     <div className="form__content">
                         <p>{errorMessage}</p>
-                        <h6>Please enter your name and/or company</h6>
+                        <h6 className="cindex-1">Please enter your name and/or company</h6>
                         <Input
                             name="nameOrCompany"
                             value={formData.nameOrCompany}
                             handleChange={handleChange}
                             placeholder="Name / Company"
                             icon={<AiOutlineUser />}
+                            cindex={2}
                         />
-                        <h6>Please enter the subject</h6>
+                        <h6 className="cindex-3">Please enter the subject</h6>
                         <Input
                             name="subject"
                             value={formData.subject}
                             handleChange={handleChange}
                             placeholder="Subject"
                             icon={<AiOutlineEdit />}
+                            cindex={4}
                         />
-                        <h6>Please enter your preferred method of contact</h6>
-                        <section>
+                        <h6 className="cindex-5">Please enter your preferred method of contact</h6>
+                        <section className="cindex-6">
                             <Input
                                 name="email"
                                 value={formData.email}
@@ -95,7 +97,7 @@ const ContactPage = () => {
                                 icon={<AiOutlinePhone />}
                             />
                         </section>
-                        <h6>Please enter your message</h6>
+                        <h6 className="cindex-7">Please enter your message</h6>
                         <textarea
                             name="message"
                             value={formData.message}
@@ -103,16 +105,17 @@ const ContactPage = () => {
                             placeholder="Message"
                             spellCheck="false"
                             rows={5}
+                            className="cindex-8"
                         />
                     </div>
-                    <div className="recaptcha">
+                    <div className="recaptcha cindex-9">
                         <ReCAPTCHA
                             sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY!}
                             onChange={handleValidate}
                             theme="dark"
                         />
                     </div>
-                    <Button click={submitForm} variant="success">
+                    <Button click={submitForm} variant="success" className="cindex-10">
                         Submit
                     </Button>
                 </div>

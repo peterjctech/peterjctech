@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AssembleContext } from "context";
 
-interface TypingProps {
+interface ScreenProps {
     string: string;
 }
 
-const Typing = ({ string }: TypingProps) => {
+const Screen = ({ string }: ScreenProps) => {
     const [text, setText] = useState("");
     const [isFlashing, setIsFlashing] = useState(false);
+    const disassembleTo = useContext(AssembleContext);
 
     useEffect(() => {
         const output = string
@@ -18,33 +20,37 @@ const Typing = ({ string }: TypingProps) => {
             arr.push(output[i].length);
         }
 
-        const sleep = (ms: number) => {
+        const timeout = (ms: number) => {
             return new Promise((resolve) => setTimeout(resolve, ms));
         };
 
         let x = 0;
         const init = async () => {
+            await timeout(500);
             for (let i = 0; i < arr.length; i++) {
                 setIsFlashing(false);
                 for (let j = 0; j < arr[i]; j++) {
-                    await sleep(40);
+                    await timeout(40);
                     x++;
                     setText(string.slice(0, x));
                 }
                 setIsFlashing(true);
-                await sleep(700);
+                await timeout(700);
             }
         };
         init();
     }, []);
     return (
-        <div className="typing">
-            <p className="typing__text">
+        <div className="screen">
+            <p className="screen__text">
                 {text}
-                <span className={`typing__block${isFlashing ? " flashing" : ""}`}></span>
+                <span className={`screen__caret${isFlashing ? " flashing" : ""}`}></span>
             </p>
+            <h6 onClick={() => disassembleTo("/projects")}>
+                <a>{`Projects >>`}</a>
+            </h6>
         </div>
     );
 };
 
-export default Typing;
+export default Screen;

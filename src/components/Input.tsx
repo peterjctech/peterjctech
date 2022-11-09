@@ -7,11 +7,14 @@ interface InputProps {
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     placeholder: string;
     icon: React.ReactElement;
+    cindex?: number;
 }
 
-const Input = ({ name, value, handleChange, placeholder, icon, type }: InputProps) => {
+const Input = ({ name, value, handleChange, placeholder, icon, type, cindex }: InputProps) => {
+    let cls = "input";
+    if (cindex) cls += " cindex-" + cindex;
     return (
-        <div className="input">
+        <div className={cls}>
             <div className="input__icon">{icon}</div>
             <input
                 name={name}

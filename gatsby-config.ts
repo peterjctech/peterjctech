@@ -6,6 +6,7 @@ require("dotenv").config({
 const strapiConfig = {
     apiURL: process.env.STRAPI_API_URL,
     queryLimit: 1000,
+    collectionTypes: ["project"],
     singleTypes: ["content"],
 };
 
@@ -21,6 +22,7 @@ const config: GatsbyConfig = {
             options: {
                 alias: {
                     components: "./src/components",
+                    context: "./src/context",
                     static: "./static",
                 },
             },

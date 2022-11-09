@@ -2,4 +2,11 @@
     height: 6rem;
     width: 100vw;
     background-color: darken($c-main, 10%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 4rem;
+    }
 }

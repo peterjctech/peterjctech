@@ -1,0 +1,24 @@
+.home-page {
+    .screen {
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+    }
+}
+.assemble {
+    .screen {
+        animation-name: fadeFromLeft;
+
+        @include breakpoint(1000px) {
+            animation-name: fadeFromLeftAbsCntr;
+        }
+    }
+}
+.disassemble {
+    .screen {
+        animation-name: fadeToRight;
+
+        @include breakpoint(1000px) {
+            animation-name: fadeToRightAbsCntr;
+        }
+    }
+}

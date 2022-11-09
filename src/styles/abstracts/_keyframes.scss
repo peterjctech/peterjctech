@@ -1,0 +1,111 @@
+@keyframes flashing {
+    0% {
+        opacity: 1;
+    }
+    69% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeToRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+}
+@keyframes fadeFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeToLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-2rem);
+    }
+}
+@keyframes scaleIn {
+    0% {
+        scale: 0;
+    }
+    100% {
+        scale: 1;
+    }
+}
+@keyframes scaleOut {
+    0% {
+        scale: 1;
+    }
+    100% {
+        scale: 0;
+    }
+}
+
+@keyframes fadeFromLeftAbsCntr {
+    0% {
+        opacity: 0;
+        transform: translate(40%, 50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(50%, 50%);
+    }
+}
+@keyframes fadeToRightAbsCntr {
+    0% {
+        opacity: 1;
+        transform: translate(50%, 50%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(60%, 50%);
+    }
+}

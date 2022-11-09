@@ -1,0 +1,132 @@
+@for $i from 1 through 10 {
+    .assemble {
+        .cindex-#{$i} {
+            opacity: 0;
+            animation-delay: (450 + 50 * $i) + ms;
+            animation-duration: 200ms;
+            animation-fill-mode: forwards;
+
+            @if $i % 2 == 0 {
+                animation-name: fadeFromRight;
+            } @else {
+                animation-name: fadeFromLeft;
+            }
+        }
+    }
+    .disassemble {
+        .cindex-#{$i} {
+            opacity: 1;
+            animation-delay: (($i - 1) * 50) + ms;
+            animation-duration: 200ms;
+            animation-fill-mode: forwards;
+
+            @if $i % 2 == 0 {
+                animation-name: fadeToLeft;
+            } @else {
+                animation-name: fadeToRight;
+            }
+        }
+    }
+}
+
+.assemble {
+    .container {
+        animation: fadeFromLeft 500ms;
+
+        @include breakpoint(1000px) {
+            animation: fadeFromLeftAbsCntr 500ms;
+        }
+    }
+}
+.disassemble {
+    .container {
+        animation: fadeToRight 500ms forwards 500ms;
+
+        @include breakpoint(1000px) {
+            animation: fadeToRightAbsCntr 500ms forwards 500ms;
+        }
+    }
+}
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+
+    .container {
+        border: solid white 1px;
+        width: min(95vw, 40rem);
+        padding: 1.2rem;
+        background-color: #1773ea;
+        border-radius: 10px;
+        overflow-x: visible;
+
+        @include breakpoint(1000px) {
+            @include center;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    overflow-x: visible;
+
+    &__content {
+        padding: 0.3rem;
+        position: relative;
+        overflow-x: visible;
+
+        p {
+            position: absolute;
+            top: 0rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: crimson;
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    h6 {
+        text-align: center;
+        font-size: 1.2rem;
+        font-family: $ff-code;
+        color: white;
+        text-shadow: #000 3px 3px 3px;
+    }
+
+    .input,
+    textarea {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        overflow: visible;
+
+        .input {
+            width: 46%;
+            transform: none;
+        }
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+
+    .recaptcha {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+
+        > div > div > div {
+            overflow: hidden;
+        }
+    }
+}

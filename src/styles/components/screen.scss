@@ -1,0 +1,50 @@
+.screen {
+    background-color: #0a0e14;
+    border-radius: 10px;
+    border: solid white 1px;
+    padding: 2rem;
+    width: min(90%, 40rem);
+    margin: 0 auto 2rem auto;
+    height: 30rem;
+    opacity: 0;
+
+    @include breakpoint(1000px) {
+        @include center;
+        margin: 0;
+    }
+
+    &__text {
+        height: 90%;
+        color: white;
+        font-family: $ff-code;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    &__caret {
+        position: relative;
+        top: 3px;
+        background-color: $c-light;
+        width: 0.5rem;
+        height: 1.4rem;
+        margin-left: 0.1rem;
+        display: inline-block;
+
+        &.flashing {
+            animation: flashing 800ms linear infinite;
+        }
+    }
+
+    h6 {
+        text-align: center;
+        font-size: 1.6rem;
+        height: 10%;
+    }
+
+    a {
+        color: #fc616e;
+        text-decoration: none;
+        font-family: $ff-code;
+        cursor: pointer;
+    }
+}

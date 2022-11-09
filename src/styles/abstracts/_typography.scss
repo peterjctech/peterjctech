@@ -1,10 +1,15 @@
 $ff-default: "Ubuntu";
 $ff-heading: "NunitoSans";
 $ff-code: "JetBrainsMono";
+$ff-cracked: "SpecialElite";
 
 @font-face {
     font-family: $ff-default;
     src: url("static/Ubuntu.ttf");
+}
+@font-face {
+    font-family: $ff-cracked;
+    src: url("static/SpecialElite-Regular.ttf");
 }
 @font-face {
     font-family: $ff-heading;

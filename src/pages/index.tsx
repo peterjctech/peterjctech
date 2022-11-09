@@ -1,9 +1,7 @@
 import React from "react";
-import { graphql, navigate } from "gatsby";
+import { graphql } from "gatsby";
 import type { HeadFC } from "gatsby";
-import { Typing, Button } from "components";
-
-const aboutMe = "Hello World.";
+import { Screen } from "components";
 
 interface HomePageProps {
     data: {
@@ -18,14 +16,8 @@ interface HomePageProps {
 const IndexPage = ({ data }: HomePageProps) => {
     return (
         <main className="home-page">
-            <div className="container">
-                <Typing string={data.allStrapiContent.nodes[0].about} />
-                <footer>
-                    <Button click={() => navigate("/projects")} variant="primary">
-                        View Projects
-                    </Button>
-                </footer>
-            </div>
+            <h1 className="title">HOME</h1>
+            <Screen string={data.allStrapiContent.nodes[0].about} />
         </main>
     );
 };

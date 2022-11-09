@@ -4,11 +4,12 @@ interface ButtonProps {
     variant: "primary" | "success";
     click?: () => void;
     children: React.ReactNode;
+    className?: string;
 }
 
-const Button = ({ variant, children, click }: ButtonProps) => {
+const Button = ({ variant, children, click, className }: ButtonProps) => {
     return (
-        <button onClick={click} className={`button ${variant}`}>
+        <button onClick={click} className={`button ${variant} ${className || ""}`}>
             {children}
         </button>
     );

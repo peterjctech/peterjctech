@@ -1,0 +1,23 @@
+.projects {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 2rem;
+    overflow: visible;
+    margin-bottom: 2rem;
+
+    @include breakpoint(1000px) {
+        width: calc(100vw - 16rem);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @include breakpoint(1500px) {
+        top: 50%;
+        transform: translate(-50%, -60%);
+    }
+}
