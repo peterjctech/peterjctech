@@ -17,7 +17,7 @@ const App = ({ children }: LayoutProps) => {
         setTimeout(() => {
             navigate(path);
             setAssembleStatus("assemble");
-        }, 1000);
+        }, 900);
     };
 
     const toggleMenu = () => {
