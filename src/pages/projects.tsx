@@ -2,29 +2,31 @@ import React, { useState } from "react";
 import { HeadFC, graphql } from "gatsby";
 import Project from "../components/Project";
 import Carousel from "../components/Carousel";
-import ProjectDetails from "../components/ProjectDetails";
+import { Details } from "components";
 
 interface ProjectsPageProps {
     data: {
         allStrapiProject: {
             nodes: {
-                name: string;
-                summary: string;
+                briefSummary: string;
                 description: string;
-                repo: string;
                 liveDemo: string;
                 preview: string;
-                screenshots: { internal: { content: string } };
+                title: string;
+                thoughts: string;
+                repo: string;
+                screenshots: {
+                    image: string;
+                    caption: string;
+                }[];
             }[];
         };
-        allStrapiContent: { nodes: { githubIcon: string }[] };
     };
 }
 
 const ProjectsPage = ({ data }: ProjectsPageProps) => {
     const [carousel, setCarousel] = useState<null | number>(null);
     const [details, setDetails] = useState<null | number>(null);
-    const icon = data.allStrapiContent.nodes[0].githubIcon;
 
     const showCarousel = (index: number) => {
         setDetails(null);
@@ -42,18 +44,18 @@ const ProjectsPage = ({ data }: ProjectsPageProps) => {
 
     if (cData) {
         carouselProps = {
-            screenshots: JSON.parse(cData.screenshots.internal.content),
+            screenshots: cData.screenshots,
             closeCarousel: () => setCarousel(null),
         };
     }
     if (dData) {
         detailProps = {
-            name: dData.name,
+            title: dData.title,
             description: dData.description,
+            thoughts: dData.thoughts,
             repo: dData.repo,
             liveDemo: dData.liveDemo,
             preview: dData.preview,
-            icon,
             closeDetails: () => setDetails(null),
         };
     }
@@ -62,20 +64,20 @@ const ProjectsPage = ({ data }: ProjectsPageProps) => {
         <main className="projects-page">
             <h1 className="title">PROJECTS</h1>
             {carouselProps && <Carousel {...carouselProps} />}
-            {detailProps && <ProjectDetails {...detailProps} />}
+            {detailProps && <Details {...detailProps} />}
+
             <div className="projects">
                 {data.allStrapiProject.nodes.map((project, index) => {
-                    const screenshots = JSON.parse(project.screenshots.internal.content);
+                    const screenshots = project.screenshots.map((obj) => obj.image);
                     return (
                         <Project
-                            key={project.name}
-                            name={project.name}
-                            summary={project.summary}
+                            key={project.title}
+                            title={project.title}
+                            summary={project.briefSummary}
                             repo={project.repo}
                             liveDemo={project.liveDemo}
                             screenshots={screenshots}
                             pindex={index + 1}
-                            icon={icon}
                             showCarousel={showCarousel}
                             showDetails={showDetails}
                         />
@@ -92,24 +94,19 @@ export const Head: HeadFC = () => <title>PJCTech | Projects</title>;
 
 export const data = graphql`
     query {
-        allStrapiProject(sort: { fields: createdAt }) {
+        allStrapiProject {
             nodes {
-                name
-                summary
+                briefSummary
                 description
-                repo
                 liveDemo
                 preview
+                title
+                thoughts
+                repo
                 screenshots {
-                    internal {
-                        content
-                    }
+                    image
+                    caption
                 }
-            }
-        }
-        allStrapiContent {
-            nodes {
-                githubIcon
             }
         }
     }

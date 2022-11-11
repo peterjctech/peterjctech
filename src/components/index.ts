@@ -7,5 +7,6 @@ import Menu from "./Menu";
 import Input from "./Input";
 import Toast from "./Toast";
 import Screen from "./Screen";
+import Details from "./Details";
 
-export { Footer, Navbar, Logo, Project, Button, Menu, Input, Toast, Screen };
+export { Footer, Navbar, Logo, Project, Button, Menu, Input, Toast, Screen, Details };

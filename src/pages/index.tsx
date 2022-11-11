@@ -27,7 +27,7 @@ export default IndexPage;
 export const Head: HeadFC = () => <title>PJCTech | Home</title>;
 
 export const data = graphql`
-    {
+    query {
         allStrapiContent {
             nodes {
                 about

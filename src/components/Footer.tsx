@@ -4,21 +4,23 @@ import { graphql, useStaticQuery } from "gatsby";
 const Footer = () => {
     const data = useStaticQuery(graphql`
         {
-            allStrapiContent {
+            allStrapiSocial {
                 nodes {
-                    github
-                    githubIcon
+                    link
+                    icon
                 }
             }
         }
     `);
-    const { github, githubIcon } = data.allStrapiContent.nodes[0];
-
     return (
         <footer className="footer">
-            <a href={github} target="__blank">
-                <img src={githubIcon} />
-            </a>
+            {data.allStrapiSocial.nodes.map((node: { link: string; icon: string }) => {
+                return (
+                    <a href={node.link} target="__blank" key={node.link}>
+                        <img src={node.icon} />
+                    </a>
+                );
+            })}
         </footer>
     );
 };

@@ -1,0 +1,222 @@
+.carousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: black, $alpha: 0.5);
+    z-index: 101;
+    opacity: 0;
+    animation: fadeIn 200ms forwards;
+
+    &__1 {
+        @include carouselPos1;
+    }
+    &__3 {
+        @include carouselPos3;
+    }
+    &__5 {
+        @include carouselPos5;
+    }
+    &__7 {
+        @include carouselPos7;
+    }
+    &__9 {
+        @include carouselPos9;
+    }
+
+    &.next {
+        .carousel__3 {
+            animation: carousel31 500ms forwards;
+        }
+        .carousel__5 {
+            animation: carousel53 500ms forwards;
+        }
+        .carousel__7 {
+            animation: carousel75 500ms forwards;
+        }
+        .carousel__9 {
+            animation: carousel97 500ms forwards;
+        }
+    }
+    &.next-partial {
+        .carousel__3 {
+            animation: carousel323 500ms forwards;
+        }
+        .carousel__5 {
+            animation: carousel545 500ms forwards;
+        }
+    }
+    &.prev {
+        .carousel__1 {
+            animation: carousel13 500ms forwards;
+        }
+        .carousel__3 {
+            animation: carousel35 500ms forwards;
+        }
+        .carousel__5 {
+            animation: carousel57 500ms forwards;
+        }
+        .carousel__7 {
+            animation: carousel79 500ms forwards;
+        }
+    }
+    &.prev-partial {
+        .carousel__5 {
+            animation: carousel565 500ms forwards;
+        }
+        .carousel__7 {
+            animation: carousel787 500ms forwards;
+        }
+    }
+
+    &__image {
+        user-select: none;
+        position: fixed;
+        bottom: 50%;
+        transform: translate(50%, 50%);
+        object-fit: cover;
+    }
+
+    &__icon {
+        position: fixed;
+        bottom: 50%;
+        width: 4rem;
+        height: 4rem;
+        background-color: black;
+        padding: 0.5rem;
+        opacity: 0.6;
+        box-shadow: 0px 0px 2px 2px $c-primary;
+        transition: opacity 200ms ease-out;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__prev-icon {
+        left: 2rem;
+    }
+    &__next-icon {
+        right: 2rem;
+    }
+
+    .disabled {
+        opacity: 0.2;
+    }
+
+    polygon {
+        fill: white;
+    }
+}
+
+@keyframes carousel13 {
+    0% {
+        @include carouselPos1;
+    }
+    100% {
+        @include carouselPos3;
+    }
+}
+@keyframes carousel35 {
+    0% {
+        @include carouselPos3;
+    }
+    100% {
+        @include carouselPos5;
+    }
+}
+@keyframes carousel57 {
+    0% {
+        @include carouselPos5;
+    }
+    100% {
+        @include carouselPos7;
+    }
+}
+@keyframes carousel79 {
+    0% {
+        @include carouselPos7;
+    }
+    100% {
+        @include carouselPos9;
+    }
+}
+@keyframes carousel97 {
+    0% {
+        @include carouselPos9;
+    }
+    100% {
+        @include carouselPos7;
+    }
+}
+@keyframes carousel75 {
+    0% {
+        @include carouselPos7;
+    }
+    100% {
+        @include carouselPos5;
+    }
+}
+@keyframes carousel53 {
+    0% {
+        @include carouselPos5;
+    }
+    100% {
+        @include carouselPos3;
+    }
+}
+@keyframes carousel31 {
+    0% {
+        @include carouselPos3;
+    }
+    100% {
+        @include carouselPos1;
+    }
+}
+
+@keyframes carousel565 {
+    0% {
+        @include carouselPos5;
+    }
+    50% {
+        @include carouselPos6;
+    }
+    100% {
+        @include carouselPos5;
+    }
+}
+@keyframes carousel787 {
+    0% {
+        @include carouselPos7;
+    }
+    50% {
+        @include carouselPos8;
+    }
+    100% {
+        @include carouselPos7;
+    }
+}
+@keyframes carousel323 {
+    0% {
+        @include carouselPos3;
+    }
+    50% {
+        @include carouselPos2;
+    }
+    100% {
+        @include carouselPos3;
+    }
+}
+@keyframes carousel545 {
+    0% {
+        @include carouselPos5;
+    }
+    50% {
+        @include carouselPos4;
+    }
+    100% {
+        @include carouselPos5;
+    }
+}

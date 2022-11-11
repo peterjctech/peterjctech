@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import { BsChevronDoubleRight, BsInfoCircleFill } from "react-icons/bs";
 
 interface ProjectProps {
-    name: string;
+    title: string;
     summary: string;
     repo: string;
     liveDemo: string;
     screenshots: string[];
     pindex: number;
-    icon: string;
     showCarousel: (index: number) => void;
     showDetails: (index: number) => void;
 }
 
 const Project = (props: ProjectProps) => {
-    const { screenshots, showCarousel, showDetails, repo, summary, name, icon, pindex, liveDemo } = props;
+    const { screenshots, showCarousel, showDetails, repo, summary, title, pindex, liveDemo } = props;
     const [scrnIndex, setScrnIndex] = useState(0);
     const [className, setClassName] = useState("");
 
@@ -26,14 +25,24 @@ const Project = (props: ProjectProps) => {
     };
 
     const handleHover = () => {
-        setClassName("fade-out");
-        setTimeout(() => {
-            setScrnIndex(getRandomIndex());
-            setClassName("fade-in");
-        }, 200);
-        setTimeout(() => {
-            setClassName("");
-        }, 400);
+        if (screenshots.length > 1) {
+            setClassName("fade-out");
+            setTimeout(() => {
+                setScrnIndex(getRandomIndex());
+                setClassName("fade-in");
+            }, 200);
+            setTimeout(() => {
+                setClassName("");
+            }, 400);
+        } else {
+            setClassName("fade-out");
+            setTimeout(() => {
+                setClassName("fade-in");
+            }, 200);
+            setTimeout(() => {
+                setClassName("");
+            }, 400);
+        }
     };
 
     return (
@@ -46,7 +55,7 @@ const Project = (props: ProjectProps) => {
             />
             <div className="project__content">
                 <header>
-                    <h6>{name}</h6>
+                    <h6>{title}</h6>
                     <a href={liveDemo} target="_blank">
                         <BsChevronDoubleRight />
                     </a>
@@ -57,7 +66,7 @@ const Project = (props: ProjectProps) => {
                 <footer>
                     <BsInfoCircleFill onClick={() => showDetails(pindex)} />
                     <a href={repo} target="__blank">
-                        <img src={icon} />
+                        <img src="https://storage.googleapis.com/peterjctech-api.appspot.com/thumbnail_Github_f7a98506e1.jpg" />
                     </a>
                 </footer>
             </div>
